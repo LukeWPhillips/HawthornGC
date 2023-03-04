@@ -1,0 +1,113 @@
+@import url("react-responsive-carousel/lib/styles/carousel.min.css");
+@import "react-responsive-carousel/lib/styles/carousel.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&display=swap");
+
+$alegreya-sans: "Alegreya Sans", serif;
+
+$myColor: #398378;
+$myBackgroundColor: #ffff;
+$fontSecondaryColor: black;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: $myColor;
+  background-color: $myBackgroundColor;
+}
+
+img {
+  width: 100%;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  nav {
+    background-color: $myBackgroundColor;
+    width: 90%;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    margin: 20px auto;
+    :hover {
+      color: #31c48d;
+    }
+  }
+
+  li {
+    display: flex;
+    font-family: $alegreya-sans;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 800px) {
+  .header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 30px;
+  }
+}
+
+.nav-link {
+  color: $myColor;
+  text-decoration: none;
+}
+
+.logo {
+  width: 14rem;
+  height: 13rem;
+}
+
+.carousel {
+  image-rendering: auto;
+}
+
+@media (min-width: 100px) {
+  .carousel {
+    height: 200px;
+  }
+}
+@media (min-width: 500px) {
+  .carousel {
+    height: 400px;
+  }
+}
+@media (min-width: 800px) {
+  .carousel {
+    height: 500px;
+  }
+}
+
+.about {
+  text-align: center;
+  padding: 20px 20px;
+  margin: 20px auto;
+  font-family: $alegreya-sans;
+  color: $fontSecondaryColor;
+}
+
+.services {
+  font-family: $alegreya-sans;
+  color: $fontSecondaryColor;
+  display: grid;
+
+  div {
+    width: 200px;
+    height: 200px;
+    background-color: #31c48d;
+  }
+}
