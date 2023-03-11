@@ -10,13 +10,10 @@ function Navbar() {
             <NavLink className="nav-link">HOME</NavLink>
           </li>
           <li>
-            <NavLink className="nav-link">ABOUT</NavLink>
-          </li>
-          <li>
             <NavLink className="nav-link">SERVICES</NavLink>
           </li>
           <li>
-            <NavLink className="nav-link">GALLERY</NavLink>
+            <NavLink className="nav-link">MY WORK</NavLink>
           </li>
           <li>
             <NavLink className="nav-link">CONTACT</NavLink>
