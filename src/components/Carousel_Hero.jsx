@@ -19,16 +19,16 @@ function ImageCarousel() {
       showIndicators={false}
     >
       <div>
-        <img src={Image1} />
+        <img src={Image1} alt="hero_image" />
       </div>
       <div>
-        <img src={Image2} />
+        <img src={Image2} alt="hero_image" />
       </div>
       <div>
-        <img src={Image3} />
+        <img src={Image3} alt="hero_image" />
       </div>
       <div>
-        <img src={Image4} />
+        <img src={Image4} alt="hero_image" />
       </div>
     </Carousel>
   );

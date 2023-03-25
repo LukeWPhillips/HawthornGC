@@ -26,6 +26,7 @@ img {
   width: 100%;
 }
 
+// Navbar
 .header-container {
   display: flex;
   justify-content: center;
@@ -55,6 +56,56 @@ img {
   }
 }
 
+// Burger Menu
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  background: #078080;
+  z-index: 100;
+}
+
+.burger_btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 18px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  z-index: 100;
+}
+
+.burger_ul,
+.burger_li {
+  margin: 0;
+  padding: 0;
+}
+
+.burger_ul {
+  padding: 25px;
+  position: fixed;
+  top: 100px;
+  width: 230px;
+  z-index: 100;
+}
+
+.burger_li {
+  list-style: none;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.text {
+  color: #fef6e4;
+}
+
 @media (min-width: 800px) {
   .header-container {
     display: flex;
@@ -63,11 +114,28 @@ img {
     flex-direction: row;
     margin-right: 30px;
   }
+  .burger_btn {
+    display: none;
+    visibility: hidden;
+  }
+}
+@media (max-width: 800px) {
+  .navbar_container {
+    visibility: hidden;
+  }
+  .header-container {
+    margin-bottom: -45px;
+  }
 }
 
 .nav-link {
   color: $myColor;
   text-decoration: none;
+}
+
+.active-nav {
+  color: #31c48d;
+  font-size: 50px;
 }
 
 .logo {
@@ -85,7 +153,7 @@ img {
 
 @media (min-width: 100px) {
   .carousel {
-    height: 200px;
+    height: 250px;
   }
 }
 @media (min-width: 500px) {
@@ -123,6 +191,18 @@ img {
   border-left: 6px solid white;
   height: 8rem;
   margin-left: 30px;
+}
+
+@media (max-width: 500px) {
+  .about {
+    h2 {
+      padding: 20px 2px;
+    }
+    .line-1 {
+      margin-top: 15px;
+      height: 12rem;
+    }
+  }
 }
 
 #header_1 {
@@ -227,20 +307,16 @@ img {
   }
 }
 
-// ON HOVER HAVE A SMALL DESCRIPTION
-// I.E Let us take care of your garden's hedge trimming and pruning needs
-
 .reviews-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-top: 5rem;
-
-  height: 50rem;
+  height: 40rem;
   background-color: $myColor;
   h1 {
-    margin-top: 3rem;
+    margin-top: 1rem;
     color: white;
     font-family: $alegreya-sans;
   }
@@ -248,6 +324,19 @@ img {
     margin-top: 2rem;
     color: $fontThirdColor;
     font-family: $alegreya-sans;
+  }
+}
+
+@media (max-width: 600px) {
+  .reviews-container {
+    height: 35rem;
+    h1 {
+      margin-top: 5px;
+    }
+    h3 {
+      margin: 30px 30px;
+      text-align: center;
+    }
   }
 }
 
@@ -267,6 +356,7 @@ img {
 }
 
 .contact {
+  height: 12rem;
   .icons-container {
     display: flex;
     justify-content: center;
@@ -279,6 +369,68 @@ img {
     margin: 2rem 2rem;
     height: 2rem;
     width: 2rem;
+    color: $fontThirdColor;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact {
+    margin-top: -1rem;
+    margin-bottom: 10rem;
+  }
+  .icons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-size: 20px;
+    }
+  }
+}
+
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    padding: 3rem;
+    font-family: $alegreya-sans;
+    color: $myColor;
+  }
+}
+
+.gallery_grid {
+  margin-bottom: 50px;
+  --gap: 10px;
+  --num-cols: 4;
+  --row-height: 300px;
+  box-sizing: border-box;
+  padding: var(--gap);
+  display: grid;
+  /* 4 columns, equal */
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+  /* unlimited amount of 300px rows in the grid */
+  grid-auto-rows: repeat(var(--row-height));
+  gap: var(--gap);
+  flex-wrap: wrap;
+  transition: 0.2s;
+  img {
+    image-rendering: crisp-edges;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-container {
+    h1 {
+      text-align: center;
+    }
+  }
+  .gallery_grid {
+    --num-cols: 2;
+    grid-template-columns: repeat(var(--num-cols), 1fr);
   }
 }
 
@@ -286,7 +438,22 @@ img {
   display: flex;
   color: white;
   font-size: 12px;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
   background-color: black;
+  p {
+    margin: 20px;
+  }
+}
+
+.hawthorn-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .fbook-logo {
+    color: #fefefe;
+    height: 20px;
+    width: 20px;
+  }
 }

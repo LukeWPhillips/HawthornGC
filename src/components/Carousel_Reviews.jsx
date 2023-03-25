@@ -1,10 +1,6 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import Image1 from "../assets/jpg/img-9.jpg";
-import Image2 from "../assets/jpg/img-2.jpg";
-import Image3 from "../assets/jpg/img-4.jpg";
-import Image4 from "../assets/jpg/img-8.jpg";
 
 function Carousel_Reviews() {
   return (
