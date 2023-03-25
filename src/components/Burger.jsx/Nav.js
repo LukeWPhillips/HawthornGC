@@ -13,10 +13,10 @@ const variants = {
 };
 
 const Items = [
-  { id: "0", text: "HOME", to: "/" },
-  { id: "1", text: "SERVICES", to: "/#services" },
+  { id: "0", text: "HOME", to: "/hawthorn" },
+  { id: "1", text: "SERVICES", to: "/hawthorn/#services" },
   { id: "2", text: "MY WORK", to: "/work" },
-  { id: "3", text: "CONTACT", to: "/#contact" },
+  { id: "3", text: "CONTACT", to: "/hawthorn/#contact" },
 ];
 
 export const Navigation = () => (
