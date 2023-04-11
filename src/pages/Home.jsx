@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { MenuToggle } from "../components/Burger.jsx/Toggle";
 import { Navigation } from "../components/Burger.jsx/Nav";
@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Carousel from "../components/Carousel_Hero";
 import CarouselTwo from "../components/Carousel_Reviews";
-import { easeIn, motion, useCycle } from "framer-motion";
+import { animate, easeIn, motion, useCycle } from "framer-motion";
 import Hedge from "../assets/jpg/hedge.jpg";
 import Planting from "../assets/jpg/planting.jpg";
 import Grass from "../assets/jpg/grass.jpg";
@@ -42,6 +42,7 @@ const sidebar = {
 function Home() {
   const location = useLocation();
   const [isOpen, toggleOpen] = useCycle(false, true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -54,6 +55,18 @@ function Home() {
     } else {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }
+    let handler = () => {
+      if (isOpen == true) {
+        toggleOpen();
+        document.body.removeEventListener("click", handler);
+      } else {
+        return () => document.body.removeEventListener("click", handler);
+      }
+
+      console.log();
+    };
+
+    document.body.addEventListener("click", handler);
   }, [location]);
 
   const imageAnimate = {
@@ -73,7 +86,11 @@ function Home() {
           custom="100%"
           className="burger_nav"
         >
-          <motion.div className="navbar" variants={sidebar} />
+          <motion.div
+            className="navbar"
+            variants={sidebar}
+            setMenuOpen={true}
+          />
           <Navigation />
           <MenuToggle toggle={() => toggleOpen()} />
         </motion.nav>
@@ -93,7 +110,7 @@ function Home() {
         </div>
 
         <h1 id="header_1">
-          <div id="services" className="line-3"></div> MY SERVICES
+          <div id="services" className="line-3"></div> My Services
         </h1>
         <div className="services-container">
           <div className="grid-container">

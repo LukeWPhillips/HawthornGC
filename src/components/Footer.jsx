@@ -12,8 +12,12 @@ function Footer() {
           <AiFillFacebook className="fbook-logo" />
         </a>
       </div>
-
-      <p>Designed and Built by Luke Phillips </p>
+      <a
+        style={{ textDecoration: "none", color: "white" }}
+        href="https://lukewphillips.github.io/Portfolio/"
+      >
+        <p>Designed and Developed by Luke Phillips </p>
+      </a>
     </div>
   );
 }

@@ -18,21 +18,11 @@ function Carousel_Reviews() {
     >
       <div>
         <p>
-          " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta
-          commodi veritatis explicabo facere magni voluptate! Eius nesciunt
-          nulla provident beatae, rem ex accusantium, dolore alias culpa, eaque
-          perspiciatis corporis neque! "
-        </p>
-      </div>
-      <div>
-        <p>
-          " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta
-          commodi veritatis explicabo facere magni voluptate! Eius nesciunt
-          nulla provident beatae, rem ex accusantium, dolore alias culpa, eaque
-          perspiciatis corporis neque! "
+          "Efficient and quality work! We are very pleased with this company.
+          Honest work by a friendly professional" "
         </p>
         <br></br>
-        <p>Name Here</p>
+        <p></p>
       </div>
       <div>
         <p>
@@ -43,16 +33,6 @@ function Carousel_Reviews() {
         </p>
         <br></br>
         <p>Simon Taylor</p>
-      </div>
-      <div>
-        <p>
-          " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta
-          commodi veritatis explicabo facere magni voluptate! Eius nesciunt
-          nulla provident beatae, rem ex accusantium, dolore alias culpa, eaque
-          perspiciatis corporis neque! "
-        </p>
-        <br></br>
-        <p>Name Here</p>
       </div>
     </Carousel>
   );
