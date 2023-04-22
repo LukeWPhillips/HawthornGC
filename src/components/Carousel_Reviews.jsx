@@ -19,10 +19,10 @@ function Carousel_Reviews() {
       <div>
         <p>
           "Efficient and quality work! We are very pleased with this company.
-          Honest work by a friendly professional" "
+          Honest work by a friendly professional "
         </p>
         <br></br>
-        <p></p>
+        <p>Mick</p>
       </div>
       <div>
         <p>

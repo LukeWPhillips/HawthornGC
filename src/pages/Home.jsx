@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Carousel from "../components/Carousel_Hero";
 import CarouselTwo from "../components/Carousel_Reviews";
-import { animate, easeIn, motion, useCycle } from "framer-motion";
+import { easeIn, motion, useCycle } from "framer-motion";
 import Hedge from "../assets/jpg/hedge.jpg";
 import Planting from "../assets/jpg/planting.jpg";
 import Grass from "../assets/jpg/grass.jpg";
@@ -42,6 +42,7 @@ const sidebar = {
 function Home() {
   const location = useLocation();
   const [isOpen, toggleOpen] = useCycle(false, true);
+  // eslint-disable-next-line
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -55,8 +56,9 @@ function Home() {
     } else {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }
+
     let handler = () => {
-      if (isOpen == true) {
+      if (isOpen === true) {
         toggleOpen();
         document.body.removeEventListener("click", handler);
       } else {
@@ -67,6 +69,7 @@ function Home() {
     };
 
     document.body.addEventListener("click", handler);
+    // eslint-disable-next-line
   }, [location]);
 
   const imageAnimate = {

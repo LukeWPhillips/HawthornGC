@@ -1,9 +1,10 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import { motion, useCycle } from "framer-motion";
 import { MenuToggle } from "../components/Burger.jsx/Toggle";
 import { Navigation } from "../components/Burger.jsx/Nav";
+import ClipLoader from "react-spinners/ClipLoader";
 import Header from "../components/Header";
 import dm1 from "../assets/jpg/dm1.jpg";
 import dm2 from "../assets/jpg/dm2.jpg";
@@ -53,8 +54,29 @@ const sidebar = {
   },
 };
 
+const dm_images = [dm1, dm2, dm3, dm4, dm5, dm6, dm7, dm8];
+const clear_images = [
+  Clear1,
+  Clear1_1,
+  Clear2,
+  Clear3,
+  Clear3_1,
+  Clear3_2,
+  Clear4,
+  Clear4_1,
+];
+const lscape_images = [L1, L2, L3, L4, L5, L6, L7, L8];
+
 function MyWork() {
   const [isOpen, toggleOpen] = useCycle(false, true);
+  const [loading, setLoading] = useState(true);
+  const counter = useRef(0);
+  const imageLoaded = () => {
+    counter.current += 1;
+    if (counter.current >= dm_images.length) {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -73,42 +95,41 @@ function MyWork() {
         <MenuToggle toggle={() => toggleOpen()} />
       </motion.nav>
       <Header />
-      <div className="gallery-container">
+
+      <div
+        style={{
+          display: loading ? "block" : "none",
+          height: "100vh",
+        }}
+      >
+        <ClipLoader />
+      </div>
+
+      <div
+        className="gallery-container"
+        style={{ display: loading ? "none" : "flex" }}
+      >
         <h1>Garden design and maintenance</h1>
         <div className="gallery_grid">
-          <img src={dm1} alt="dm_image" />
-          <img src={dm2} alt="dm_image" />
-          <img src={dm3} alt="dm_image" />
-          <img src={dm4} alt="dm_image" />
-          <img src={dm5} alt="dm_image" />
-          <img src={dm6} alt="dm_image" />
-          <img src={dm7} alt="dm_image" />
-          <img src={dm8} alt="dm_image" />
+          {dm_images.map((image) => (
+            <img key={image} src={image} alt="dm" onLoad={imageLoaded} />
+          ))}
         </div>
         <h1>Garden clearances and tidy ups</h1>
         <div className="gallery_grid">
-          <img src={Clear1} alt="clearance_image" />
-          <img src={Clear1_1} alt="clearance_image" />
-          <img src={Clear2} alt="clearance_image" />
-          <img src={Clear3} alt="clearance_image" />
-          <img src={Clear3_1} alt="clearance_image" />
-          <img src={Clear3_2} alt="clearance_image" />
-          <img src={Clear4} alt="clearance_image" />
-          <img src={Clear4_1} alt="clearance_image" />
+          {clear_images.map((image) => (
+            <img key={image} src={image} alt="clear" onLoad={imageLoaded} />
+          ))}
         </div>
 
         <h1>Landscaping</h1>
         <div className="gallery_grid">
-          <img src={L1} alt="landscape_image" />
-          <img src={L2} alt="landscape_image" />
-          <img src={L3} alt="landscape_image" />
-          <img src={L4} alt="landscape_image" />
-          <img src={L5} alt="landscape_image" />
-          <img src={L6} alt="landscape_image" />
-          <img src={L7} alt="landscape_image" />
-          <img src={L8} alt="landscape_image" />
+          {lscape_images.map((image) => (
+            <img key={image} src={image} alt="lscape" onLoad={imageLoaded} />
+          ))}
         </div>
       </div>
+
       <Footer />
     </>
   );

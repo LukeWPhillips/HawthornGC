@@ -13,7 +13,11 @@ function Footer() {
         </a>
       </div>
       <a
-        style={{ textDecoration: "none", color: "white" }}
+        style={{
+          // fontSize: "11px",
+          textDecoration: "none",
+          color: "white",
+        }}
         href="https://lukewphillips.github.io/Portfolio/"
       >
         <p>Designed and Developed by Luke Phillips </p>
