@@ -18,7 +18,7 @@ function Footer() {
           textDecoration: "none",
           color: "white",
         }}
-        href="https://lukewphillips.github.io/Portfolio/"
+        href="https://lumidesigns.dev"
       >
         <p>Designed and Developed by Luke Phillips </p>
       </a>
